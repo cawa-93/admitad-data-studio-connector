@@ -1,0 +1,31 @@
+{
+
+  "private": true,
+
+  "dsccConnector": {
+    "production": "AKfycbw4iHjwZXZ7gXL38I3fBgvdwcPcf7l2NwTMPGcEtVcQwMQf9MXKt21yBBWbfC8vKKQXnQ",
+    "latest": "AKfycbzwoRMHtv10T_m5Cllh8jVcD8g84BXVaw62WFzAAPRq"
+  },
+
+  "scripts": {
+    "push": "dscc-scripts connector push_changes",
+    "watch": "dscc-scripts connector watch_changes",
+    "open": "dscc-scripts connector open_script",
+    "open_template": "dscc-scripts connector open_template",
+    "try_production": "dscc-scripts connector try_production",
+    "try_latest": "dscc-scripts connector try_latest",
+    "update_production": "dscc-scripts connector update_production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cawa-93/admitad-datastudio-connectors.git"
+  },
+  "author": "Alex Kozack",
+  "bugs": {
+    "url": "https://github.com/cawa-93/admitad-datastudio-connectors/issues"
+  },
+  "homepage": "https://github.com/cawa-93/admitad-datastudio-connectors#readme",
+  "dependencies": {
+    "@google/dscc-scripts": "^1.0.17"
+  }
+}

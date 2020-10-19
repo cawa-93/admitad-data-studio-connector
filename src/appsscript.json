@@ -1,0 +1,39 @@
+{
+  "timeZone": "America/Los_Angeles",
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8",
+  "dataStudio": {
+    "name": "Unofficial Admitad connector",
+    "logoUrl": "https://raw.githubusercontent.com/npm/logos/master/npm%20square/n-64.png",
+    "company": "Alex Kozack",
+    "companyUrl": "https://kozack.me",
+    "addonUrl": "https://github.com/cawa-93/admitad-datastudio-connectors#readme",
+    "supportUrl": "https://github.com/cawa-93/admitad-datastudio-connectors/issues",
+    "description": "Free, Unofficial connector for Admitad network. Allows you to get statistics from the affiliate program by ID",
+    "shortDescription": "Free, Unofficial connector for Admitad.",
+    "feeType": [
+      "FREE"
+    ],
+    "sources": [
+      "ADMITAD"
+    ],
+    "authType": [
+      "OAUTH2"
+    ]
+  },
+  "urlFetchWhitelist": [
+    "https://api.admitad.com/advertiser/"
+  ],
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "OAuth2",
+        "libraryId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF",
+        "version": "38"
+      }
+    ]
+  }
+}
