@@ -4,6 +4,7 @@ function isAdminUser() {
 
 
 function getData(request) {
+	validateConfig(request.configParams)
 
 	const fixedSchema = getSchema(request).schema;
 	const schema = fixedSchema.filter(({name}) => request.fields.find(f => f.name === name));
@@ -12,14 +13,14 @@ function getData(request) {
 
 	let data;
 	try {
-		data = fetchDataFromApi(request);
+		data = mockFetch(request);
 	} catch (e) {
 		const cc = DataStudioApp.createCommunityConnector();
 
 		cc.newUserError()
 			.setDebugText('Error fetching data from API. Exception details: ' + e)
 			.setText(
-				'Не удалось загрузить данные из Admitad. Возможно у вас нет прав для доступа к статистике указанной партнерской программы. Повторите попытку позже или сообщите о проблеме, если ошибка не исчезнет.',
+				'Failed to load data from Admitad. Perhaps the affiliate program ID is incorrect or you do not have permission to access the statistics. Please try again later or report the problem if the error persists.',
 			)
 			.throwException();
 	}
@@ -41,7 +42,7 @@ function getData(request) {
 	return {
 		schema,
 		rows,
-		'filtersApplied': true,
+		'filtersApplied': false,
 	};
 }
 
@@ -66,7 +67,6 @@ function fetchDataFromApi({configParams, dateRange}) {
 
 	const responseString = UrlFetchApp.fetch(baseUrl + '?' + query, {headers});
 	const response = JSON.parse(responseString);
-	console.log(response);
 	return response.results || [];
 }
 
@@ -99,7 +99,7 @@ function mockFetch() {
 			'payment_sum_approved': '0.00',
 			'ctr': 4.12,
 			'views': 214719,
-			'currency': 'RUB',
+			'currency': 'USD',
 			'leads_open': '144',
 			'payment_sum_open': '7650.00',
 			'ecpm': 35.63,

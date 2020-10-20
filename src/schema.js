@@ -1,4 +1,5 @@
 function getSchema(request) {
+	validateConfig(request.configParams)
 	const cc = DataStudioApp.createCommunityConnector();
 	const fields = cc.getFields();
 	const types = cc.FieldType;
@@ -8,13 +9,12 @@ function getSchema(request) {
 	fields.newDimension()
 		.setId('currency')
 		.setName('Currency')
-		.setDescription('Валюта')
 		.setType(types.TEXT);
 
 	const date = fields.newDimension()
 		.setId('date')
 		.setName('Date')
-		.setDescription('Дата статистики')
+		.setDescription('Report date')
 		.setType(types.YEAR_MONTH_DAY)
 
 	// Metrics
@@ -22,64 +22,60 @@ function getSchema(request) {
 	fields.newMetric()
 		.setId('views')
 		.setName('Views')
-		.setDescription('Количество показов')
+		.setDescription('The number of impressions')
 		.setType(types.NUMBER);
 
 	const clicks = fields.newMetric()
 		.setId('clicks')
 		.setName('Clicks')
-		.setDescription('Клики')
 		.setType(types.NUMBER);
 
 	fields.newMetric()
 		.setId('cr')
 		.setName('CR')
-		.setDescription('Конверсия')
+		.setDescription('Conversion rate')
 		.setType(types.NUMBER);
 
 	fields.newMetric()
 		.setId('ctr')
 		.setName('CTR')
-		.setDescription('CTR')
 		.setType(types.NUMBER);
 
 	fields.newMetric()
 		.setId('ecpc')
 		.setName('eCPC')
-		.setDescription('eCPC')
 		.setType(types.NUMBER);
 
 	fields.newMetric()
 		.setId('ecpm')
 		.setName('eCPM')
-		.setDescription('eCPM')
 		.setType(types.NUMBER);
 
 	fields.newMetric()
 		.setId('leads_approved')
 		.setName('Leads approved')
-		.setDescription('Количество подтверждённых лидов')
+		.setDescription('Number of confirmed leads')
 		.setType(types.NUMBER)
 		.setGroup('Leads');
 
 	fields.newMetric()
 		.setId('leads_declined')
 		.setName('Leads declined')
-		.setDescription('Количество отклоненных лидов')
+		.setDescription('Number of rejected leads')
 		.setType(types.NUMBER)
 		.setGroup('Leads');
 
 	fields.newMetric()
 		.setId('leads_open')
 		.setName('Leads open')
-		.setDescription('Количество открытых лидов')
+		.setDescription('Number of leads on hold')
 		.setType(types.NUMBER)
 		.setGroup('Leads');
 
 	fields.newMetric()
 		.setId('payment_sum_approved')
 		.setName('Payment sum approved')
-		.setDescription('Сумма по подтверждённым действиям')
+		.setDescription('The amount related to the confirmed actions')
 		.setType(types.NUMBER)
 		.setGroup('Payments');
 

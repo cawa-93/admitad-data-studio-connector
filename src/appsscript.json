@@ -4,7 +4,7 @@
   "runtimeVersion": "V8",
   "dataStudio": {
     "name": "Unofficial Admitad connector",
-    "logoUrl": "https://raw.githubusercontent.com/npm/logos/master/npm%20square/n-64.png",
+    "logoUrl": "https://raw.githubusercontent.com/cawa-93/admitad-datastudio-connectors/main/admitad-logo.png",
     "company": "Alex Kozack",
     "companyUrl": "https://kozack.me",
     "addonUrl": "https://github.com/cawa-93/admitad-datastudio-connectors#readme",
