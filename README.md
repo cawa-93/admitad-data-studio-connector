@@ -11,7 +11,7 @@ the [Admitad](https://admitad.com/) advertiser reports.
 
 ## Try the Community Connector in Data Studio
 
-Development in process. Links to the use of this will be provided soon.
+Development in process. Links to the use of this will be provided soon. To show your interest in this connector you can star this repository.
 
 ## Deploy the Community Connector yourself
 
