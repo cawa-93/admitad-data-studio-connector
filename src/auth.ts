@@ -26,7 +26,7 @@ export function getOAuthService() {
         .setCallbackFunction('authCallback')
 
         // Set the property store where authorized tokens should be persisted.
-        .setPropertyStore(PropertiesService.getScriptProperties())
+        .setPropertyStore(PropertiesService.getUserProperties())
 
         // Set the scopes to request (space-separated for Google services).
         .setScope('advertiser_statistics');
@@ -43,6 +43,7 @@ export function getOAuthService() {
  */
 export function authCallback(request: GoogleAppsScript.Data_Studio.Request<ConnectorConfig>) {
     const authorized = getOAuthService().handleCallback(request);
+
     if (authorized) {
         return HtmlService.createHtmlOutput('Success! You can close this tab.');
     } else {
@@ -70,6 +71,7 @@ export function isAuthValid() {
     if (service == null) {
         return false;
     }
+
     return service.hasAccess();
 }
 
