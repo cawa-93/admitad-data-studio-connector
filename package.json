@@ -17,13 +17,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cawa-93/admitad-datastudio-connectors.git"
+    "url": "git+https://github.com/cawa-93/admitad-data-studio-connector.git"
   },
   "author": "Alex Kozack",
   "bugs": {
-    "url": "https://github.com/cawa-93/admitad-datastudio-connectors/issues"
+    "url": "https://github.com/cawa-93/admitad-data-studio-connector/issues"
   },
-  "homepage": "https://github.com/cawa-93/admitad-datastudio-connectors#readme",
+  "homepage": "https://github.com/cawa-93/admitad-data-studio-connector#readme",
   "devDependencies": {
     "@google/dscc-scripts": "^1.0.17",
     "@rollup/plugin-replace": "^2.3.3",

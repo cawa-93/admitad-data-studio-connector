@@ -4,11 +4,11 @@
   "runtimeVersion": "V8",
   "dataStudio": {
     "name": "Unofficial Admitad connector",
-    "logoUrl": "https://raw.githubusercontent.com/cawa-93/admitad-datastudio-connectors/main/admitad-logo.png",
+    "logoUrl": "https://raw.githubusercontent.com/cawa-93/admitad-data-studio-connector/main/admitad-logo.png",
     "company": "Alex Kozack",
     "companyUrl": "https://kozack.me",
-    "addonUrl": "https://github.com/cawa-93/admitad-datastudio-connectors#readme",
-    "supportUrl": "https://github.com/cawa-93/admitad-datastudio-connectors/issues",
+    "addonUrl": "https://github.com/cawa-93/admitad-data-studio-connector#readme",
+    "supportUrl": "https://github.com/cawa-93/admitad-data-studio-connector/issues",
     "description": "Free, Unofficial connector for Admitad network. Allows you to get statistics from the affiliate program by ID",
     "shortDescription": "Free, Unofficial connector for Admitad.",
     "feeType": [
