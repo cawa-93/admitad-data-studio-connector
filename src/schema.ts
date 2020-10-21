@@ -1,4 +1,5 @@
 import { validateConfig } from './config';
+import { CC } from "./contants";
 import { getFields } from "./fields";
 import { ConnectorConfig } from "./index";
 
@@ -14,10 +15,8 @@ import { ConnectorConfig } from "./index";
 export function getSchema(request: GoogleAppsScript.Data_Studio.Request<ConnectorConfig>) {
     validateConfig(request.configParams);
 
-    const cc = DataStudioApp.createCommunityConnector();
-
-
-    const fields = getFields(request);
-
-    return cc.newGetSchemaResponse().setFields(fields).build();
+    return CC
+        .newGetSchemaResponse()
+        .setFields(getFields(request))
+        .build();
 }

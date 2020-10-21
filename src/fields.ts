@@ -1,18 +1,14 @@
+import { CC, FieldType } from "./contants";
 import { ConnectorConfig } from "./index";
 
 type Fields = GoogleAppsScript.Data_Studio.Fields
 type Field = GoogleAppsScript.Data_Studio.Field
 
-const cc = DataStudioApp.createCommunityConnector();
-const types = cc.FieldType;
-
-
-
 function currency(fields: Fields) {
     return fields.newDimension()
         .setId('currency')
         .setName('Currency')
-        .setType(types.TEXT);
+        .setType(FieldType.TEXT);
 }
 
 
@@ -22,7 +18,7 @@ function date(fields: Fields) {
         .setId('date')
         .setName('Date')
         .setDescription('Report date')
-        .setType(types.YEAR_MONTH_DAY);
+        .setType(FieldType.YEAR_MONTH_DAY);
 }
 
 
@@ -32,7 +28,7 @@ function views(fields: Fields) {
         .setId('views')
         .setName('Views')
         .setDescription('The number of impressions')
-        .setType(types.NUMBER);
+        .setType(FieldType.NUMBER);
 }
 
 
@@ -41,7 +37,7 @@ function clicks(fields: Fields) {
     return fields.newMetric()
         .setId('clicks')
         .setName('Clicks')
-        .setType(types.NUMBER);
+        .setType(FieldType.NUMBER);
 }
 
 
@@ -61,7 +57,7 @@ export function getFields(request: GoogleAppsScript.Data_Studio.Request<Connecto
         ? request.fields.map(f => f.name)
         : ['currency', 'date', 'views', 'clicks'];
 
-    const fields = cc.getFields();
+    const fields = CC.getFields();
 
     for (const fieldId of fieldIds) {
         map[fieldId](fields);

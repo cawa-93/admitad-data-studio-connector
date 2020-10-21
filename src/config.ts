@@ -1,6 +1,4 @@
-/**
- * @see https://developers.google.com/datastudio/connector/reference#getconfig
- */
+import { CC } from "./contants";
 import { ConnectorConfig } from "./index";
 
 
@@ -13,7 +11,7 @@ import { ConnectorConfig } from "./index";
  */
 export function getConfig() {
 
-    const config = DataStudioApp.createCommunityConnector().getConfig();
+    const config = CC.getConfig();
 
     config
         .newTextInput()
@@ -31,11 +29,12 @@ export function getConfig() {
 export function validateConfig(configParams: ConnectorConfig = {}) {
     try {
         if (!configParams.c_id) {
+            // noinspection ExceptionCaughtLocallyJS
             throw new Error('Affiliate program ID is required.');
         }
 
     } catch (e) {
-        DataStudioApp.createCommunityConnector()
+        CC
             .newUserError()
             .setText(e.message)
             .throwException();

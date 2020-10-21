@@ -1,3 +1,4 @@
+import { AuthType, CC } from "./contants";
 import { ConnectorConfig } from "./index";
 
 
@@ -100,8 +101,7 @@ export function get3PAuthorizationUrls() {
  * @see https://developers.google.com/datastudio/connector/reference?hl=ru#resetauth
  */
 export function resetAuth() {
-    const service = getOAuthService();
-    service.reset();
+    getOAuthService().reset();
 }
 
 
@@ -113,11 +113,10 @@ export function resetAuth() {
  * @see https://developers.google.com/datastudio/connector/reference#getauthtype
  */
 export function getAuthType() {
-    const cc = DataStudioApp.createCommunityConnector();
 
-    return cc
+    return CC
         .newAuthTypeResponse()
-        .setAuthType(cc.AuthType.OAUTH2)
+        .setAuthType(AuthType.OAUTH2)
         .build();
 }
 

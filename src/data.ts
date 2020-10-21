@@ -1,11 +1,8 @@
 import { getOAuthService } from "./auth";
+import { CC, FieldType } from "./contants";
 import { getFields } from "./fields";
 import { ConnectorConfig } from './index';
 import { mockData } from "./mockData";
-
-const FieldType = DataStudioApp.createCommunityConnector().FieldType;
-
-
 
 /**
  * Возвращает табличные данные для запроса.
@@ -16,7 +13,9 @@ const FieldType = DataStudioApp.createCommunityConnector().FieldType;
  */
 export function getData(request: GoogleAppsScript.Data_Studio.Request<ConnectorConfig>) {
     const fields = getFields(request);
-    const response = DataStudioApp.createCommunityConnector().newGetDataResponse().setFields(fields);
+    const response = CC
+        .newGetDataResponse()
+        .setFields(fields);
 
     try {
         const rows = fetchData(request)
@@ -32,9 +31,7 @@ export function getData(request: GoogleAppsScript.Data_Studio.Request<ConnectorC
             .setFiltersApplied(false);
 
     } catch (e) {
-        const cc = DataStudioApp.createCommunityConnector();
-
-        cc.newUserError()
+        CC.newUserError()
             .setDebugText('Error fetching data from API. Exception details: ' + e)
             .setText(
                 'Failed to load data from Admitad. Perhaps the affiliate program ID is incorrect or you do not have permission to access the statistics. Please try again later or report the problem if the error persists.',
