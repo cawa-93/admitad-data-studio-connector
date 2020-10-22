@@ -9,9 +9,9 @@ This [Data Studio](https://datastudio.google.com) [Community
 Connector](https://developers.google.com/datastudio/connector) lets users query
 the [Admitad](https://admitad.com/) advertiser reports.
 
-## Try the Connector in Data Studio
+## Getting started
 
-Development in process. **Link to use this will be provided soon**. To speed up the development, you can become a sponsor on [patreon](https://www.patreon.com/Kozack).
+Development in process. **Link to use this will be provided soon**. 
 
 ### Supported Advertiser reports
 
