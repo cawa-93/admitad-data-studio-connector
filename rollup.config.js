@@ -7,6 +7,7 @@ import copy       from 'rollup-plugin-copy';
 dotenv.config();
 
 
+// noinspection JSUnusedGlobalSymbols
 export default {
 	input: 'src/index.ts',
 	output: {
@@ -19,7 +20,7 @@ export default {
 			'process.env.ADMITAD_CLIENT_ID': JSON.stringify(process.env.ADMITAD_CLIENT_ID),
 			'process.env.ADMITAD_CLIENT_SECRET': JSON.stringify(process.env.ADMITAD_CLIENT_SECRET),
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-			'process.env.MOCK_ADMITAD_REQUESTS': process.env.MOCK_ADMITAD_REQUESTS === 'true',
+			'process.env.MOCK_ADMITAD_REQUESTS': process.env.MOCK_ADMITAD_REQUESTS === 'true' ? 'true' : 'false',
 		}),
 		typescript({
 			noEmitOnError: process.env.NODE_ENV === 'production'

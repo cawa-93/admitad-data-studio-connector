@@ -1,7 +1,7 @@
+import { _mockApiResponse } from "./_mockApiResponse";
 import { getOAuthService } from "./auth";
 import { CC, ConnectorConfig, FieldType } from "./contants";
 import { getFields } from "./fields";
-import { mockData } from "./mockData";
 
 
 
@@ -33,9 +33,11 @@ export function getData(request: GoogleAppsScript.Data_Studio.Request<ConnectorC
 
     } catch (e) {
         CC.newUserError()
-            .setDebugText('Error fetching data from API. Exception details: ' + e)
+            .setDebugText('Error fetching data from API: ' + e)
             .setText(
-                'Failed to load data from Admitad. Perhaps the affiliate program ID is incorrect or you do not have permission to access the statistics. Please try again later or report the problem if the error persists.',
+                'Failed to load data from Admitad. ' +
+                'Perhaps the affiliate program ID is incorrect or you do not have permission to access the statistics. ' +
+                'Please try again later or report the problem if the error persists.',
             )
             .throwException();
     }
@@ -68,7 +70,7 @@ function getFormattedCell(item: any, field: GoogleAppsScript.Data_Studio.Field) 
 
 function fetchData(request: GoogleAppsScript.Data_Studio.Request<ConnectorConfig>) {
     if (process.env.NODE_ENV !== 'production' && process.env.MOCK_ADMITAD_REQUESTS) {
-        return mockData();
+        return _mockApiResponse(request);
     } else {
         return fetchDataFromApi(request);
     }
@@ -84,7 +86,12 @@ function fetchDataFromApi({configParams, dateRange}: GoogleAppsScript.Data_Studi
         Authorization: 'Bearer ' + service.getAccessToken(),
     };
 
-    const baseUrl = 'https://api.admitad.com/advertiser/' + configParams.c_id + '/statistics/dates/';
+
+    const baseUrl = 'https://api.admitad.com/advertiser/'
+        + configParams.c_id
+        + '/statistics/'
+        + configParams.report_type
+        + '/'; // Без слэша в конце сервер возвращает ошибку 404
 
     const query = [
         'limit=500',

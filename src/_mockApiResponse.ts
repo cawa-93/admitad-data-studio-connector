@@ -1,4 +1,8 @@
-export function mockData() {
+import { ConnectorConfig } from "./contants";
+
+
+
+export function _mockApiResponse(_request: GoogleAppsScript.Data_Studio.Request<ConnectorConfig>) {
     return [
         {
             "sales_approved": "0",
