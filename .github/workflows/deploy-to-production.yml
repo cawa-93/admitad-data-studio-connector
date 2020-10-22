@@ -1,0 +1,25 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Deploy to Prodatcion
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    - run: npm ci
+    - name: Create credentials
+      env:
+        credentials: ${{ secrets.GOOGLE_CREDENTIALS }}
+      run: echo $credentials >> ~/.clasprc.json
+    - run: npm run push_production
