@@ -19,7 +19,7 @@ type GoogleDataStudioContext = {
     getOAuthService: () => GoogleAppsScriptOAuth2.OAuth2Service
     resetAuth: () => void
 
-    isAdminUser?: () => void
+    isAdminUser?: () => boolean
 }
 
 const ctx: GoogleDataStudioContext = {

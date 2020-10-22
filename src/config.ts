@@ -16,13 +16,15 @@ export function getConfig() {
         .newTextInput()
         .setId('c_id')
         .setName('Affiliate program ID')
-        .setPlaceholder('12345');
+        .setPlaceholder('12345')
+    ;
 
     config
         .newSelectSingle()
         .setId('report_type')
         .setName('Choose advertiser report')
-        .addOption(config.newOptionBuilder().setLabel('Reports on date').setValue(ReportType.dates));
+        .addOption(config.newOptionBuilder().setLabel('Reports on date').setValue(ReportType.dates))
+    ;
 
 
     config.setDateRangeRequired(true);
