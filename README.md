@@ -25,8 +25,3 @@ Development in process. **Link to use this will be provided soon**.
 - 🚧 Reports on channels *(in progress)*
 - 🚧 Reports on groups *(in progress)*
 - 🚧 Reports by offline orders *(in progress)*
-
-## Deploy the Community Connector yourself
-
-Use the [deployment guide](https://github.com/googledatastudio/community-connectors/blob/master/deploy.md) to deploy the Community Connector
-yourself.
