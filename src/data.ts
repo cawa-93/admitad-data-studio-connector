@@ -1,8 +1,9 @@
 import { getOAuthService } from "./auth";
-import { CC, FieldType } from "./contants";
+import { CC, ConnectorConfig, FieldType } from "./contants";
 import { getFields } from "./fields";
-import { ConnectorConfig } from './index';
 import { mockData } from "./mockData";
+
+
 
 /**
  * Возвращает табличные данные для запроса.

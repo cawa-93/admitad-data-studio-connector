@@ -1,8 +1,9 @@
-import { CC, FieldType } from "./contants";
-import { ConnectorConfig } from "./index";
+import { CC, ConnectorConfig, FieldType, ReportType } from "./contants";
 
 type Fields = GoogleAppsScript.Data_Studio.Fields
 type Field = GoogleAppsScript.Data_Studio.Field
+
+
 
 function currency(fields: Fields) {
     return fields.newDimension()
@@ -42,7 +43,7 @@ function clicks(fields: Fields) {
 
 
 
-const map: { [id: string]: (fields: Fields) => Field } = {
+const fieldSet: { [id: string]: (fields: Fields) => Field } = {
     currency,
     date,
     views,
@@ -51,71 +52,85 @@ const map: { [id: string]: (fields: Fields) => Field } = {
 
 
 
-export function getFields(request: GoogleAppsScript.Data_Studio.Request<ConnectorConfig>) {
-
-    const fieldIds = request.fields
-        ? request.fields.map(f => f.name)
-        : ['currency', 'date', 'views', 'clicks'];
-
-    const fields = CC.getFields();
-
-    for (const fieldId of fieldIds) {
-        map[fieldId](fields);
+function getDefaultFields(report_type: ReportType) {
+    switch (report_type) {
+        case ReportType.dates:
+            return ['currency', 'date', 'views', 'clicks'];
     }
 
+    // noinspection JSUnusedLocalSymbols
+    const _exhaustiveCheck: never = report_type;
 
-    // Metrics
-
-
-    // fields.newMetric()
-    //     .setId('cr')
-    //     .setName('CR')
-    //     .setDescription('Conversion rate')
-    //     .setType(types.NUMBER);
-    //
-    // fields.newMetric()
-    //     .setId('ctr')
-    //     .setName('CTR')
-    //     .setType(types.NUMBER);
-    //
-    // fields.newMetric()
-    //     .setId('ecpc')
-    //     .setName('eCPC')
-    //     .setType(types.NUMBER);
-    //
-    // fields.newMetric()
-    //     .setId('ecpm')
-    //     .setName('eCPM')
-    //     .setType(types.NUMBER);
-    //
-    // fields.newMetric()
-    //     .setId('leads_approved')
-    //     .setName('Leads approved')
-    //     .setDescription('Number of confirmed leads')
-    //     .setType(types.NUMBER)
-    //     .setGroup('Leads');
-    //
-    // fields.newMetric()
-    //     .setId('leads_declined')
-    //     .setName('Leads declined')
-    //     .setDescription('Number of rejected leads')
-    //     .setType(types.NUMBER)
-    //     .setGroup('Leads');
-    //
-    // fields.newMetric()
-    //     .setId('leads_open')
-    //     .setName('Leads open')
-    //     .setDescription('Number of leads on hold')
-    //     .setType(types.NUMBER)
-    //     .setGroup('Leads');
-    //
-    // fields.newMetric()
-    //     .setId('payment_sum_approved')
-    //     .setName('Payment sum approved')
-    //     .setDescription('The amount related to the confirmed actions')
-    //     .setType(types.NUMBER)
-    //     .setGroup('Payments');
-
-
-    return fields;
+    return [];
 }
+
+
+
+export function getFields({configParams: {report_type}, fields}: GoogleAppsScript.Data_Studio.Request<ConnectorConfig>) {
+
+    const fieldIds = fields && fields.length
+        ? fields.map(f => f.name)
+        : getDefaultFields(ReportType[report_type]);
+
+    const fieldsBuilder = CC.getFields();
+
+    for (const fieldId of fieldIds) {
+        fieldSet[fieldId](fieldsBuilder);
+    }
+
+    return fieldsBuilder;
+}
+
+
+
+// Metrics
+
+
+// fields.newMetric()
+//     .setId('cr')
+//     .setName('CR')
+//     .setDescription('Conversion rate')
+//     .setType(types.NUMBER);
+//
+// fields.newMetric()
+//     .setId('ctr')
+//     .setName('CTR')
+//     .setType(types.NUMBER);
+//
+// fields.newMetric()
+//     .setId('ecpc')
+//     .setName('eCPC')
+//     .setType(types.NUMBER);
+//
+// fields.newMetric()
+//     .setId('ecpm')
+//     .setName('eCPM')
+//     .setType(types.NUMBER);
+//
+// fields.newMetric()
+//     .setId('leads_approved')
+//     .setName('Leads approved')
+//     .setDescription('Number of confirmed leads')
+//     .setType(types.NUMBER)
+//     .setGroup('Leads');
+//
+// fields.newMetric()
+//     .setId('leads_declined')
+//     .setName('Leads declined')
+//     .setDescription('Number of rejected leads')
+//     .setType(types.NUMBER)
+//     .setGroup('Leads');
+//
+// fields.newMetric()
+//     .setId('leads_open')
+//     .setName('Leads open')
+//     .setDescription('Number of leads on hold')
+//     .setType(types.NUMBER)
+//     .setGroup('Leads');
+//
+// fields.newMetric()
+//     .setId('payment_sum_approved')
+//     .setName('Payment sum approved')
+//     .setDescription('The amount related to the confirmed actions')
+//     .setType(types.NUMBER)
+//     .setGroup('Payments');

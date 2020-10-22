@@ -1,13 +1,10 @@
 import * as auth from "./auth";
 import * as config from './config';
+import { ConnectorConfig } from "./contants";
 import * as data from './data';
 import * as schema from './schema';
 import DS = GoogleAppsScript.Data_Studio;
 
-
-export interface ConnectorConfig {
-    c_id?: string
-}
 
 type GoogleDataStudioContext = {
     getConfig: (request: DS.Request<ConnectorConfig>) => DS.Config

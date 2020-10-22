@@ -3,7 +3,7 @@
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
   "dataStudio": {
-    "name": "Unofficial Admitad connector",
+    "name": "Admitad connector",
     "logoUrl": "https://raw.githubusercontent.com/cawa-93/admitad-data-studio-connector/main/admitad-logo.png",
     "company": "Alex Kozack",
     "companyUrl": "https://kozack.me",

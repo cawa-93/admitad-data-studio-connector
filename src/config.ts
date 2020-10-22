@@ -1,5 +1,4 @@
-import { CC } from "./contants";
-import { ConnectorConfig } from "./index";
+import { CC, ConnectorConfig, ReportType } from "./contants";
 
 
 
@@ -19,6 +18,13 @@ export function getConfig() {
         .setName('Affiliate program ID')
         .setPlaceholder('12345');
 
+    config
+        .newSelectSingle()
+        .setId('report_type')
+        .setName('Choose advertiser report')
+        .addOption(config.newOptionBuilder().setLabel('Reports on date').setValue(ReportType.dates));
+
+
     config.setDateRangeRequired(true);
 
     return config.build();
@@ -26,11 +32,16 @@ export function getConfig() {
 
 
 
-export function validateConfig(configParams: ConnectorConfig = {}) {
+export function validateConfig(configParams: Partial<ConnectorConfig> = {}) {
     try {
         if (!configParams.c_id) {
             // noinspection ExceptionCaughtLocallyJS
             throw new Error('Affiliate program ID is required.');
+        }
+
+        if (!configParams.report_type || !Object.keys(ReportType).includes(configParams.report_type)) {
+            // noinspection ExceptionCaughtLocallyJS
+            throw new Error('Choose advertiser report.');
         }
 
     } catch (e) {

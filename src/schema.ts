@@ -1,7 +1,6 @@
 import { validateConfig } from './config';
-import { CC } from "./contants";
+import { CC, ConnectorConfig } from "./contants";
 import { getFields } from "./fields";
-import { ConnectorConfig } from "./index";
 
 
 

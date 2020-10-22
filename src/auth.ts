@@ -1,5 +1,4 @@
-import { AuthType, CC } from "./contants";
-import { ConnectorConfig } from "./index";
+import { AuthType, CC, ConnectorConfig } from "./contants";
 
 
 
