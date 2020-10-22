@@ -15,7 +15,7 @@ Development in process. **Link to use this will be provided soon**. To speed up 
 
 ### Supported Advertiser reports
 
-- 🚧 Reports on date *(in progress)*
+- ✅ Reports on date
 - 🚧 Reports by actions *(in progress)*
 - 🚧 Reports on publishers *(in progress)*
 - 🚧 Reports by ad spaces *(in progress)*
