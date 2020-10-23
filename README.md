@@ -1,6 +1,6 @@
 # Free Google Data Studio Connector for Admitad 
 
-*This is not an official Google or Admitad product*
+*This is not an official Google or Admitad product!*
 
 **The project is being developed by sponsors on [patreon](https://www.patreon.com/Kozack)**.
 
