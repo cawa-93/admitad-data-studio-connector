@@ -6,6 +6,8 @@ name: Deploy to Produtcion
 on:
   push:
     branches: [ main ]
+    paths-ignore: 
+      - 'README.md'
 
 jobs:
   deploy:
