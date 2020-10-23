@@ -8,14 +8,14 @@
     "open": "clasp open",
     "build": "rollup --config",
     "build_watch": "npm run build -- --watch",
-    "build_production": "cross-env NODE_ENV=production npm run build",
     "prepush": "npm run build",
     "push": "clasp push --force",
-    "push_watch": "clasp push --force --watch",
-    "prepush_production": "npm run build_production",
-    "push_production": "clasp deploy -i AKfycbw4iHjwZXZ7gXL38I3fBgvdwcPcf7l2NwTMPGcEtVcQwMQf9MXKt21yBBWbfC8vKKQXnQ -d Production",
-    "try": "echo \"https://datastudio.google.com/datasources/create?connectorId=AKfycbzwoRMHtv10T_m5Cllh8jVcD8g84BXVaw62WFzAAPRq\"",
-    "try_production": "echo \"https://datastudio.google.com/datasources/create?connectorId=AKfycbw4iHjwZXZ7gXL38I3fBgvdwcPcf7l2NwTMPGcEtVcQwMQf9MXKt21yBBWbfC8vKKQXnQ\""
+    "push_watch": "npm run push -- --watch",
+    "prepush_production": "cross-env NODE_ENV=production npm run build",
+    "push_production": "clasp deploy -i $npm_package_ids_production -d Production",
+    "try": "echo \"https://datastudio.google.com/datasources/create?connectorId=$npm_package_ids_latest\"",
+    "try_production": "echo \"https://datastudio.google.com/datasources/create?connectorId=$npm_package_ids_production\"",
+    "production_version": "clasp deployments | grep $npm_package_ids_production | grep -oE \"@[0-9]+\" | grep -oE \"[0-9]+\""
   },
   "repository": {
     "type": "git",

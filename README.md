@@ -1,17 +1,17 @@
-# Free Admitad Connector for Data Studio
+# Free Google Data Studio Connector for Admitad 
 
 *This is not an official Google or Admitad product*
 
 **The project is being developed by sponsors on [patreon](https://www.patreon.com/Kozack)**.
 
 
-This [Data Studio](https://datastudio.google.com) [Community
+This [Google Data Studio](https://datastudio.google.com) [Community
 Connector](https://developers.google.com/datastudio/connector) lets users query
 the [Admitad](https://admitad.com/) advertiser reports.
 
 ## Getting started
 
-Development in process. **Link to use this will be provided soon**. 
+Development in process. **Link to use google data studio connector for Admitad will be provided soon**. 
 
 ### Supported Advertiser reports
 

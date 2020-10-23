@@ -1,25 +1,43 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Deploy to Prodatcion
+name: Deploy to Produtcion
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  build:
+  deploy:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 14.x
-    - run: npm ci
-    - name: Create credentials
-      env:
-        credentials: ${{ secrets.GOOGLE_CREDENTIALS }}
-      run: echo $credentials >> ~/.clasprc.json
-    - run: npm run push_production
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: npm ci
+
+      - name: Create credentials
+        env:
+          credentials: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: echo $credentials >> ~/.clasprc.json
+
+      - run: npm run push_production
+        shell: bash
+      
+      - name: Fetch production version
+        run: echo "::set-output name=VERSION::$(npm run --silent production_version)"
+        id: "production"
+
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          release_name: v${{ steps.production.outputs.VERSION }}
+          tag_name: v${{ steps.production.outputs.VERSION }}
+          draft: false
+          prerelease: false
