@@ -1,8 +1,9 @@
-# Free Google Data Studio Connector for Admitad 
+# Free Google Data Studio Connector for Admitad
+![GitHub Release Date](https://img.shields.io/github/release-date/cawa-93/admitad-data-studio-connector?label=last%20update) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/cawa-93/admitad-data-studio-connector?label=last%20version)
 
 *This is not an official Google or Admitad product!*
 
-**The project is being developed by sponsors on [patreon](https://www.patreon.com/Kozack)**.
+**The project sponsored from [patreon]**.
 
 
 This [Google Data Studio](https://datastudio.google.com) [Community
@@ -26,9 +27,11 @@ Using the Admitad Connector is simple! Just visit **[this link](https://datastud
 1. Click `Validate` and choose `Admitad connector` bellow.
 
 ### Authorization
-At the first authorization you will receive a warning that this connector has never been tested by Google employees. This is normal.
+At the first authorization you can receive a warning "This app isn't verified". This is normal.
 
 In this window, click **"Advanced"** and then **"Go to Admitad Connector (unsafe)"** to continue authorization. You can always revoke access in the same manner as for [any connector](https://support.google.com/datastudio/answer/9053467).
+
+![](authorization-srceenshot.png)
 
 ## Supported Advertiser reports
 
@@ -42,3 +45,10 @@ In this window, click **"Advanced"** and then **"Go to Admitad Connector (unsafe
 - 🚧 Reports on channels *(in progress)*
 - 🚧 Reports on groups *(in progress)*
 - 🚧 Reports by offline orders *(in progress)*
+
+
+
+To speed up development, you can [sponsor][patreon] or **STAR** this repository to help promote it.
+
+
+[patreon]: https://www.patreon.com/Kozack
