@@ -11,9 +11,26 @@ the [Admitad](https://admitad.com/) advertiser reports.
 
 ## Getting started
 
-Development in process. **Link to use google data studio connector for Admitad will be provided soon**. 
+### Add Admitad Data Source
 
-### Supported Advertiser reports
+Using the Admitad Connector is simple! Just visit **[this link](https://datastudio.google.com/datasources/create?connectorId=AKfycbw4iHjwZXZ7gXL38I3fBgvdwcPcf7l2NwTMPGcEtVcQwMQf9MXKt21yBBWbfC8vKKQXnQ)** to create a new Data Source.
+
+#### An alternative way
+1. Visit [Data Studio](https://datastudio.google.com/) and click on **Data Sources** from the left-hand navigation.
+1. Click on the + (Add) button in the bottom right corner to create a new Data Source.
+1. Choose Partner Connectors and find `Build Your Own`
+1. Set `Deployment ID`
+    ```
+    AKfycbw4iHjwZXZ7gXL38I3fBgvdwcPcf7l2NwTMPGcEtVcQwMQf9MXKt21yBBWbfC8vKKQXnQ
+    ```
+1. Click `Validate` and choose `Admitad connector` bellow.
+
+### Authorization
+At the first authorization you will receive a warning that this connector has never been tested by Google employees. This is normal.
+
+In this window, click **"Advanced"** and then **"Go to Admitad Connector (unsafe)"** to continue authorization. You can always revoke access in the same manner as for [any connector](https://support.google.com/datastudio/answer/9053467).
+
+## Supported Advertiser reports
 
 - ✅ Reports on date
 - 🚧 Reports by actions *(in progress)*
