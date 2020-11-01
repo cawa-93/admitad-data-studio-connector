@@ -5,7 +5,7 @@ export const AuthType = CC.AuthType;
 export enum ReportType {
     dates = 'dates',
     // actions = 'actions',
-    // webmasters = 'webmasters',
+    webmasters = 'webmasters',
     // websites = 'websites',
     // banners = 'banners',
     // landings = 'landings',

@@ -36,8 +36,8 @@ In this window, click **"Advanced"** and then **"Go to Admitad Connector (unsafe
 ## Supported Advertiser reports
 
 - ✅ Reports on date
+- ✅ Reports on publishers
 - 🚧 Reports by actions *(in progress)*
-- 🚧 Reports on publishers *(in progress)*
 - 🚧 Reports by ad spaces *(in progress)*
 - 🚧 Reports on banners *(in progress)*
 - 🚧 Reports on landing pages *(in progress)*

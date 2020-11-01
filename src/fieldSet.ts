@@ -1,13 +1,12 @@
 import { FieldType } from "./contants";
 
 type Fields = GoogleAppsScript.Data_Studio.Fields
-type Field = GoogleAppsScript.Data_Studio.Field
 
 
 // Dimensions
 // ------------
 
-export function currency(fields: Fields) {
+function currency(fields: Fields) {
     return fields.newDimension()
         .setId('currency')
         .setName('Currency')
@@ -16,7 +15,7 @@ export function currency(fields: Fields) {
 
 
 
-export function date(fields: Fields) {
+function date(fields: Fields) {
     return fields.newDimension()
         .setId('date')
         .setName('Date')
@@ -24,12 +23,20 @@ export function date(fields: Fields) {
         .setType(FieldType.YEAR_MONTH_DAY);
 }
 
+function username(fields: Fields) {
+    return fields.newDimension()
+        .setId('username')
+        .setName('Username')
+        .setDescription('Publisher')
+        .setType(FieldType.TEXT)
+}
+
 
 
 // Metrics
 // ------------
 
-export function views(fields: Fields) {
+function views(fields: Fields) {
     return fields.newMetric()
         .setId('views')
         .setName('Views')
@@ -39,7 +46,7 @@ export function views(fields: Fields) {
 
 
 
-export function clicks(fields: Fields) {
+function clicks(fields: Fields) {
     return fields.newMetric()
         .setId('clicks')
         .setName('Clicks')
@@ -48,7 +55,7 @@ export function clicks(fields: Fields) {
 
 
 
-export function cr(fields: Fields): Field {
+function cr(fields: Fields) {
     return fields.newMetric()
         .setId('cr')
         .setName('CR')
@@ -58,7 +65,7 @@ export function cr(fields: Fields): Field {
 
 
 
-export function ctr(fields: Fields): Field {
+function ctr(fields: Fields) {
     return fields.newMetric()
         .setId('ctr')
         .setName('CTR')
@@ -67,7 +74,7 @@ export function ctr(fields: Fields): Field {
 
 
 
-export function ecpc(fields: Fields): Field {
+function ecpc(fields: Fields) {
     return fields.newMetric()
         .setId('ecpc')
         .setName('eCPC')
@@ -76,7 +83,7 @@ export function ecpc(fields: Fields): Field {
 
 
 
-export function ecpm(fields: Fields): Field {
+function ecpm(fields: Fields) {
     return fields.newMetric()
         .setId('ecpm')
         .setName('eCPM')
@@ -85,7 +92,7 @@ export function ecpm(fields: Fields): Field {
 
 
 
-export function leads_approved(fields: Fields): Field {
+function leads_approved(fields: Fields) {
     return fields.newMetric()
         .setId('leads_approved')
         .setName('Leads approved')
@@ -96,7 +103,7 @@ export function leads_approved(fields: Fields): Field {
 
 
 
-export function leads_declined(fields: Fields): Field {
+function leads_declined(fields: Fields) {
     return fields.newMetric()
         .setId('leads_declined')
         .setName('Leads declined')
@@ -107,7 +114,7 @@ export function leads_declined(fields: Fields): Field {
 
 
 
-export function leads_open(fields: Fields): Field {
+function leads_open(fields: Fields) {
     return fields.newMetric()
         .setId('leads_open')
         .setName('Leads open')
@@ -118,7 +125,7 @@ export function leads_open(fields: Fields): Field {
 
 
 
-export function payment_sum_approved(fields: Fields): Field {
+function payment_sum_approved(fields: Fields) {
     return fields.newMetric()
         .setId('payment_sum_approved')
         .setName('Payment sum approved')
@@ -129,7 +136,7 @@ export function payment_sum_approved(fields: Fields): Field {
 
 
 
-export function payment_sum_open(fields: Fields): Field {
+function payment_sum_open(fields: Fields) {
     return fields.newMetric()
         .setId('payment_sum_open')
         .setName('Payment sum open')
@@ -140,7 +147,7 @@ export function payment_sum_open(fields: Fields): Field {
 
 
 
-export function sales_approved(fields: Fields): Field {
+function sales_approved(fields: Fields) {
     return fields.newMetric()
         .setId('sales_approved')
         .setName('Sales approved')
@@ -151,7 +158,7 @@ export function sales_approved(fields: Fields): Field {
 
 
 
-export function sales_declined(fields: Fields): Field {
+function sales_declined(fields: Fields) {
     return fields.newMetric()
         .setId('sales_declined')
         .setName('Sales declined')
@@ -160,7 +167,7 @@ export function sales_declined(fields: Fields): Field {
         .setGroup('Sales');
 }
 
-export function sales_open(fields: Fields): Field {
+function sales_open(fields: Fields) {
     return fields.newMetric()
         .setId('sales_open')
         .setName('Sales open')
@@ -188,4 +195,5 @@ export const fieldSet = {
     sales_approved,
     sales_declined,
     sales_open,
+    username,
 };

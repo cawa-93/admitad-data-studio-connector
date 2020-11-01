@@ -24,6 +24,25 @@ function getDefaultFields(report_type: ReportType) {
                 'sales_declined',
                 'sales_open',
             ] as const;
+        case ReportType.webmasters:
+            return [
+                'clicks',
+                'currency',
+                'cr',
+                'ctr',
+                'username',
+                'ecpc',
+                'ecpm',
+                'leads_approved',
+                'leads_declined',
+                'leads_open',
+                'payment_sum_approved',
+                'payment_sum_open',
+                'sales_approved',
+                'sales_declined',
+                'sales_open',
+                'views',
+            ] as const;
     }
 
     // noinspection JSUnusedLocalSymbols

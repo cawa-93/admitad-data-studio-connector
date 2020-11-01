@@ -24,6 +24,7 @@ export function getConfig() {
         .setId('report_type')
         .setName('Choose advertiser report')
         .addOption(config.newOptionBuilder().setLabel('Reports on date').setValue(ReportType.dates))
+        .addOption(config.newOptionBuilder().setLabel('Reports on publishers').setValue(ReportType.webmasters))
     ;
 
 
