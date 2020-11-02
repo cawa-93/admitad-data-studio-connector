@@ -41,7 +41,8 @@ function views(fields: Fields) {
         .setId('views')
         .setName('Views')
         .setDescription('The number of impressions')
-        .setType(FieldType.NUMBER);
+        .setType(FieldType.NUMBER)
+        .setGroup('Efficiency');
 }
 
 
@@ -50,7 +51,8 @@ function clicks(fields: Fields) {
     return fields.newMetric()
         .setId('clicks')
         .setName('Clicks')
-        .setType(FieldType.NUMBER);
+        .setType(FieldType.NUMBER)
+        .setGroup('Efficiency');
 }
 
 
@@ -60,7 +62,8 @@ function cr(fields: Fields) {
         .setId('cr')
         .setName('CR')
         .setDescription('Conversion rate')
-        .setType(FieldType.NUMBER);
+        .setType(FieldType.NUMBER)
+        .setGroup('Conversions');
 }
 
 
@@ -69,7 +72,8 @@ function ctr(fields: Fields) {
     return fields.newMetric()
         .setId('ctr')
         .setName('CTR')
-        .setType(FieldType.NUMBER);
+        .setType(FieldType.NUMBER)
+        .setGroup('Efficiency');
 }
 
 
@@ -78,7 +82,8 @@ function ecpc(fields: Fields) {
     return fields.newMetric()
         .setId('ecpc')
         .setName('eCPC')
-        .setType(FieldType.NUMBER);
+        .setType(FieldType.NUMBER)
+        .setGroup('Cost');
 }
 
 
@@ -87,7 +92,8 @@ function ecpm(fields: Fields) {
     return fields.newMetric()
         .setId('ecpm')
         .setName('eCPM')
-        .setType(FieldType.NUMBER);
+        .setType(FieldType.NUMBER)
+        .setGroup('Cost');
 }
 
 
