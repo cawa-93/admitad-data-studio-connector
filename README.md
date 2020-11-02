@@ -1,5 +1,6 @@
 # Free Google Data Studio Connector for Admitad
 ![GitHub Release Date](https://img.shields.io/github/release-date/cawa-93/admitad-data-studio-connector?label=last%20update) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/cawa-93/admitad-data-studio-connector?label=last%20version)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcawa-93%2Fadmitad-data-studio-connector.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcawa-93%2Fadmitad-data-studio-connector?ref=badge_shield)
 
 *This is not an official Google or Admitad product!*
 
@@ -52,3 +53,7 @@ To speed up development, you can [sponsor][patreon] or **STAR** this repository 
 
 
 [patreon]: https://www.patreon.com/Kozack
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcawa-93%2Fadmitad-data-studio-connector.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcawa-93%2Fadmitad-data-studio-connector?ref=badge_large)
