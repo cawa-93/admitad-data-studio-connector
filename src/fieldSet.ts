@@ -62,7 +62,7 @@ function cr(fields: Fields) {
         .setId('cr')
         .setName('CR')
         .setDescription('Conversion rate')
-        .setType(FieldType.NUMBER)
+        .setType(FieldType.PERCENT)
         .setGroup('Conversions');
 }
 
@@ -72,7 +72,7 @@ function ctr(fields: Fields) {
     return fields.newMetric()
         .setId('ctr')
         .setName('CTR')
-        .setType(FieldType.NUMBER)
+        .setType(FieldType.PERCENT)
         .setGroup('Efficiency');
 }
 

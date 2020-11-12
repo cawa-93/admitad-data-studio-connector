@@ -54,13 +54,19 @@ function getFormattedCell(item: any, field: GoogleAppsScript.Data_Studio.Field) 
         return;
     }
 
+
     let value = item[key];
+
     if (!value) {
         return value;
     }
 
     if (field.getType() === FieldType.YEAR_MONTH_DAY) {
         value = value.replace(/-/g, '');
+    }
+
+    if (field.getType() === FieldType.PERCENT) {
+        value = value / 100;
     }
 
     return value;
