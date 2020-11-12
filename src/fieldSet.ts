@@ -23,12 +23,14 @@ function date(fields: Fields) {
         .setType(FieldType.YEAR_MONTH_DAY);
 }
 
+
+
 function username(fields: Fields) {
     return fields.newDimension()
         .setId('username')
         .setName('Username')
         .setDescription('Publisher')
-        .setType(FieldType.TEXT)
+        .setType(FieldType.TEXT);
 }
 
 
@@ -172,6 +174,8 @@ function sales_declined(fields: Fields) {
         .setType(FieldType.NUMBER)
         .setGroup('Sales');
 }
+
+
 
 function sales_open(fields: Fields) {
     return fields.newMetric()
