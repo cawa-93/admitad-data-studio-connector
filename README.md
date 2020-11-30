@@ -27,7 +27,7 @@ Using the Admitad Connector is simple! Just visit **[this link](https://datastud
 1. Click `Validate` and choose `Admitad connector` bellow.
 
 ### Authorization
-At the first authorization you can receive a warning "This app isn't verified". This is normal.
+At the first authorization, you can receive a warning "This app isn't verified". This is normal.
 
 In this window, click **"Advanced"** and then **"Go to Admitad Connector (unsafe)"** to continue authorization. You can always revoke access in the same manner as for [any connector](https://support.google.com/datastudio/answer/9053467).
 
