@@ -1,6 +1,8 @@
 # Free Google Data Studio Connector for Admitad
 ![GitHub Release Date](https://img.shields.io/github/release-date/cawa-93/admitad-data-studio-connector?label=last%20update) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/cawa-93/admitad-data-studio-connector?label=last%20version)
 
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct-single.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+
 *This is not an official Google or Admitad product!*
 
 **The project sponsored from [patreon]**.
